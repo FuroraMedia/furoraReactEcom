@@ -1,0 +1,15 @@
+
+html {
+  font-size: 62.5%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @include font-size(14);
+  font-family: "Montserrat", sans-serif;
+}
+
+ol,
+ul {
+  margin: 0 0 0 15px;
+}

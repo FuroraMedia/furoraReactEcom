@@ -1,0 +1,45 @@
+
+// navigation styles
+
+
+.navigation {
+  
+
+  &__header {
+    // first
+  }
+
+  &__container {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.primary-navigation {
+  &__item {
+    display: inline-block;
+    float: none;
+    padding: 0 15px;
+  }
+
+  &__link {
+    @include font-size(12);
+    @include line-height(15);
+    position: relative;
+    float: left;
+    padding: 15px 0;
+    margin: 0;
+    color: $main-navigation-color;
+    border-color: transparent;
+    font-weight: normal;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &:focus,
+    &:hover {
+      color: $main-navigation-color-hover;
+    }
+  }
+}
