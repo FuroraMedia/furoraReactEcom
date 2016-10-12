@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-//var ExtractTextPlugin = require(extract-text-webpack-plugin');
+// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	devtool: 'sourcemap',
@@ -15,9 +15,9 @@ module.exports = {
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoErrorsPlugin(),
-		new ExtractTextPlugin('style.css', {
-			allChunks: true
-		})
+		// new ExtractTextPlugin('style.css', {
+		// 	allChunks: true
+		// })
 	],
 	resolve: {
 		modulesDirectories: ['node_modules']
@@ -26,12 +26,16 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.scss$/,
-				loaders: ['style', 'css?sourceMap', 'sass?sourceMap']
+				loaders: ['style', 'css', 'sass']
 			},
 			{
 				test: /\.css/,
 				loader: 'style!css'
 			},
+			// {
+			// 	test: /\.scss$/,
+			// 	loader: ExtractTextPlugin.extract('css!sass')
+			// },
 			{
 				test: /\.js$/,
 				loader: ['babel'],
@@ -39,12 +43,12 @@ module.exports = {
 					presets: ['es2015', 'react']
 				},
 				exclude: ['/node_modules/', '/\.spec\.js/']
-			},
-			// ,
-			// {
-    	// 	test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
-    	// 	loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
-			// }
+			}
+			,
+			{
+    		test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+    		loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
+			}
 		]
 	}
 }
@@ -53,8 +57,4 @@ module.exports = {
 // {
 // 	test: /\.css/,
 // 	loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-// },
-// {
-// 	test: /\.scss$/,
-// 	loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader')
 // },

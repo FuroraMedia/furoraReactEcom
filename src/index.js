@@ -8,7 +8,8 @@ import {Provider} from 'react-redux';
 import {Router, browserHistory } from 'react-router';
 import routes from './routes';
 import {loadProducts} from './actions/productActions';
-import css from './styles/shared.scss';
+
+import './styles/shared.scss';
 
 const store = configureStore();
 store.dispatch(loadProducts());

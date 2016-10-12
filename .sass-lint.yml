@@ -1,7 +1,7 @@
 # Documentation:
 # https://github.com/brigade/scss-lint/blob/master/lib/scss_lint/linter/README.md
 
-scss_files: 'assets/src/css/**/*.scss'
+scss_files: 'src/styles/**/*.scss'
 exclude:
   - node_modules
   - assets/src/css/vendors/**
