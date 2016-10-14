@@ -1,41 +1,40 @@
 var path = require('path');
 var webpack = require('webpack');
-// var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-	devtool: 'sourcemap',
+	debug: true,
+	devtool: 'cheap-module-eval-source-map',
+	noInfo: false,
 	entry: [
-		'./src/index.js',
-		'webpack-hot-middleware/client'],
+		'webpack-hot-middleware/client?reload=true',
+		'./src/index.js'],
 	output: {
 		path: path.join(__dirname, 'dist'),
-		filename: 'bundle.js',
-		publicPath: '/static/'
+		publicPath: '/static/',
+		filename: 'bundle.js'
 	},
 	plugins: [
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin(),
-		// new ExtractTextPlugin('style.css', {
-		// 	allChunks: true
-		// })
+		new webpack.NoErrorsPlugin()
 	],
 	resolve: {
 		modulesDirectories: ['node_modules']
 	},
 	module: {
+
+		// preLoaders: [
+    //   {
+    //     test: /\.js$/,
+    //     loader: 'eslint-loader',
+    //     exclude: /node_modules/
+    //   }
+    // ],
+
 		loaders: [
 			{
 				test: /\.scss$/,
 				loaders: ['style', 'css', 'sass']
 			},
-			{
-				test: /\.css/,
-				loader: 'style!css'
-			},
-			// {
-			// 	test: /\.scss$/,
-			// 	loader: ExtractTextPlugin.extract('css!sass')
-			// },
 			{
 				test: /\.js$/,
 				loader: ['babel'],
@@ -43,18 +42,11 @@ module.exports = {
 					presets: ['es2015', 'react']
 				},
 				exclude: ['/node_modules/', '/\.spec\.js/']
-			}
-			,
+			},
 			{
-    		test: /\.(jpe|jpg|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+    		test: /\.(jpe|jpg|png|woff|woff2|eot|ttf|svg)(\?.*$|$)/,
     		loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
 			}
 		]
 	}
 }
-
-
-// {
-// 	test: /\.css/,
-// 	loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
-// },

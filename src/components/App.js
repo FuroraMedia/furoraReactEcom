@@ -1,14 +1,18 @@
 import React, {PropTypes} from 'react';
-import Header from './common/Header';
+import Header from './common/header/Header';
 import Footer from './common/footer/Footer';
 
 class App extends React.Component {
     render() {
         return (
-            <div className="container grid">
+            <div className="container">
                 <Header/>
-
+                <main>
+                <div>
                 {this.props.children}
+
+                </div>
+                </main>
                 <Footer/>
             </div>
         )

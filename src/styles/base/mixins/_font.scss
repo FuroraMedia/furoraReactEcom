@@ -20,12 +20,12 @@
   @return $string;
 }
 
-@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf) {
   $src: null;
 
   $extmods: (
           eot: '?',
-          svg: '#' + str-replace($name, ' ', '_')
+          //svg: '#' + str-replace($name, ' ', '_')
   );
 
   $formats: (

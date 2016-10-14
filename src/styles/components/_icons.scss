@@ -1,0 +1,20 @@
+// icon styles
+
+.icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-search {
+  @include svg-icon($search-svg, 20px, 20px);
+}
+
+.icon-account {
+  @include svg-icon($account-svg, 20px, 20px);
+}
+
+.icon-basket {
+  @include svg-icon($basket-svg, 20px, 20px);
+}

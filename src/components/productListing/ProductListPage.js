@@ -4,6 +4,8 @@ import {bindActionCreators} from 'redux';
 import * as productActions from '../../actions/productActions';
 import ProductList from './ProductList';
 
+import css from './productListing.scss';
+
 class ProductView extends React.Component {
 
   constructor(props, context) {
@@ -19,7 +21,6 @@ class ProductView extends React.Component {
 
     return (
 			<div>
-				<h1>Product View</h1>
         <ProductList products={products} />
 			</div>
 		);

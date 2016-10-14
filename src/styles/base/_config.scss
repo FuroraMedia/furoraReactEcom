@@ -1,4 +1,5 @@
 $base-url: './';
+$base-image-url: '../images';
 
 $black: #333;
 $purple: #af5875;
@@ -6,3 +7,8 @@ $purple: #af5875;
 
 $main-navigation-color: #272727;
 $main-navigation-color-hover: $purple;
+
+
+$search-svg: '#{$base-image-url}/icons/search.svg';
+$account-svg: '#{$base-image-url}/icons/account.svg';
+$basket-svg: '#{$base-image-url}/icons/basket.svg';

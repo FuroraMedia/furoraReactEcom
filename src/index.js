@@ -6,10 +6,13 @@ import { render } from 'react-dom';
 import configureStore from './store/configureStore';
 import {Provider} from 'react-redux';
 import {Router, browserHistory } from 'react-router';
+
+import './styles/base/_normalize.scss';
+import './styles/shared.scss';
+
 import routes from './routes';
 import {loadProducts} from './actions/productActions';
 
-import './styles/shared.scss';
 
 const store = configureStore();
 store.dispatch(loadProducts());

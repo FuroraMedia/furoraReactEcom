@@ -8,9 +8,9 @@ export function loadProductsSuccess(products) {
 
 export function loadProducts() {
   return function(dispatch) {
-    return productApi.getAllProducts().then(products => {
+    return productApi.getAllProducts().then((products) => {
       dispatch(loadProductsSuccess(products));
-    }).catch(error => {
+    }).catch((error) => {
       throw(error);
     });
   };
