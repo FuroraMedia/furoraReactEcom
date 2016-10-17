@@ -1,7 +1,7 @@
 var path = require('path');
 var express = require('express');
 var webpack = require('webpack');
-var compression = require('compression');
+// var compression = require('compression');
 var config = require('./webpack.config.dev');
 // var config = require('./webpack.config.prod');
 

@@ -2,7 +2,6 @@ import * as types from './actionTypes';
 import productApi from '../api/mockProductAPi';
 
 export function loadProductsSuccess(products) {
-  console.log(products);
   return { type: types.LOAD_PRODUCTS_SUCCESS, products };
 }
 

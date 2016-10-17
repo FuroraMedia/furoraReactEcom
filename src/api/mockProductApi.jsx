@@ -10,7 +10,7 @@ const products = [
     watchHref: 'http://www.pluralsight.com/products/react-flux-building-applications',
     authorId: 'cory-house',
     length: '5:08',
-    category: 'JavaScript'
+    category: 'JavaScript',
   },
   {
     id: 'clean-code',
@@ -18,7 +18,7 @@ const products = [
     watchHref: 'http://www.pluralsight.com/products/writing-clean-code-humans',
     authorId: 'cory-house',
     length: '3:10',
-    category: 'Software Practices'
+    category: 'Software Practices',
   },
   {
     id: 'architecture',
@@ -26,7 +26,7 @@ const products = [
     watchHref: 'http://www.pluralsight.com/products/architecting-applications-dotnet',
     authorId: 'cory-house',
     length: '2:52',
-    category: 'Software Architecture'
+    category: 'Software Architecture',
   },
   {
     id: 'career-reboot-for-developer-mind',
@@ -34,7 +34,7 @@ const products = [
     watchHref: 'http://www.pluralsight.com/products/career-reboot-for-developer-mind',
     authorId: 'cory-house',
     length: '2:30',
-    category: 'Career'
+    category: 'Career',
   },
   {
     id: 'web-components-shadow-dom',
@@ -42,8 +42,8 @@ const products = [
     watchHref: 'http://www.pluralsight.com/products/web-components-shadow-dom',
     authorId: 'cory-house',
     length: '5:10',
-    category: 'HTML5'
-  }
+    category: 'HTML5',
+  },
 ];
 
 function replaceAll(str, find, replace) {
@@ -77,9 +77,9 @@ class ProductApi {
           const existingproductIndex = products.findIndex(a => a.id == product.id);
           products.splice(existingproductIndex, 1, product);
         } else {
-          //Just simulating creation here.
-          //The server would generate ids and watchHref's for new products in a real app.
-          //Cloning so copy returned is passed by value rather than by reference.
+          // Just simulating creation here.
+          // The server would generate ids and watchHref's for new products in a real app.
+          // Cloning so copy returned is passed by value rather than by reference.
           product.id = generateId(product);
           product.watchHref = `http://www.pluralsight.com/products/${product.id}`;
           products.push(product);
